@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/assets/hut.png" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-startscreen.css">
+    <title>El Pollo Loco</title>
+    <script src="models/movable-objects.class.js"></script>
+    <script src="models/character.class.js"></script>
+    <script src="models/chicken.class.js"></script>
+    <script src="models/cloud.class.js"></script>
+    <script src="models/world.class.js"></script>
+    <script src="models/background-object.class.js"></script>
+    <script src="models/keyboard.class.js"></script>
+
+
+    
+    
+</head>
+<body onload="init()">
+
+    <nav>
+        <a href="#">Info</a> |
+        <a href="#">Kontakt</a> |
+        <a href="#">Entwickler</a> |
+        <a href="#">Allgemeines</a> 
+    </nav>
+
+    
+    <h1>El Pollo Loco</h1>
+
+    <img id="soundOnIcon" src="img/assets/sound.png" onclick="toggleSound()" style="width: 54px; cursor: pointer; display: none;">
+    <img id="soundOffIcon" src="img/assets/sound-off.png" onclick="toggleSound()" style="width: 54px; cursor: pointer;">
+
+
+    <div id="gameWrapper">
+        <!-- Startscreen div wird in den Flow aufgenommen -->
+        <div id="startScreen" class="overlay">
+            <button id="startButton" class="start-button">Spiel starten</button>
+        </div>
+
+        <canvas id="canvas" width="720" height="480"></canvas>
+    </div>
+
+    <script src="js/sound.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html>

@@ -97,3 +97,13 @@ window.addEventListener('keyup', (event) => {
 
     console.log(event);
 });
+
+window.addEventListener('load', () => {
+    const soundOnIcon = document.getElementById('soundOnIcon');
+    const soundOffIcon = document.getElementById('soundOffIcon');
+
+    isPlaying = false;
+    soundOnIcon.style.display = 'none';
+    soundOffIcon.style.display = 'inline';
+    soundOnIcon.classList.remove('sound-playing');
+});

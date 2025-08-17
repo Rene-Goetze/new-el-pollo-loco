@@ -11,16 +11,18 @@ function toggleSound() {
         isPlaying = false;
         soundOnIcon.style.display = 'none';
         soundOffIcon.style.display = 'inline';
+        soundOnIcon.classList.remove('sound-playing');
     } else {
         if (!introSound) {
             introSound = new Audio('audio/mexicana.mp3');
             introSound.loop = true;
             introSound.volume = 0.8;
         }
-        introSound.play();
+        introSound.play().catch(err => console.error("Audio-Fehler:", err));
         isPlaying = true;
         soundOnIcon.style.display = 'inline';
         soundOffIcon.style.display = 'none';
+        soundOnIcon.classList.add('sound-playing');
     }
 }
 
@@ -33,8 +35,9 @@ function fadeOutIntroSound() {
         } else {
             introSound.pause();
             introSound.currentTime = 0;
-            introSound.volume = 0.5; // Reset volume für nächsten Start
+            introSound.volume = 0.8;
             clearInterval(fadeInterval);
         }
     }, 100);
 }
+
